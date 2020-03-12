@@ -9,8 +9,29 @@
 
   <body>
     <main class="container">
+      <!-- <ul class="row">
+        <li class="col-6 mb-4">
+          <a
+            href=""
+            target="_blank"
+            class="list-group-item list-group-item-action"
+          >
+            <div class="d-flex w-100 justify-content-between mb-3">
+              <h5 class="mb-1 font-weight-bold">Repo name</h5>
+              <small>19.03.2020</small>
+            </div>
+            <p class="mb-1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+              consequatur unde harum quis molestiae animi, quibusdam dolorem,
+              culpa accusamus dolor fugit non a sed necessitatibus quam
+              eligendi. Saepe, alias repellat.
+            </p>
+          </a>
+        </li>
+      </ul> -->
+      <ul class="row repoList"></ul>
       <section class="widget">
-        <form>
+        <form class="formCreateRepo">
           <h1>Create a new repository</h1>
 
           <div class="row pb-3">
@@ -79,6 +100,22 @@
           </button>
           <button type="submit" class="submitBtn btn btn-primary">
             Create repository
+          </button>
+        </form>
+      </section>
+
+      <section class="delete">
+        <form class="formDeleteRepo">
+          <h1>Delete repository</h1>
+
+          <div class="row pb-3">
+            <div class="col-4">
+              <label for="repoNameDel">Repository Name</label>
+              <input type="text" class="form-control" id="repoNameDel" />
+            </div>
+          </div>
+          <button type="submit" class="deleteBtn btn btn-primary">
+            Delete repository
           </button>
         </form>
       </section>

@@ -60,3 +60,12 @@ On submit, clear the form
 12. Add extra params to your get repos list query, if you like, for example sorting order, or fetching only public repos, take a look at the docs what you could use.
 
 > API endpoint: https://developer.github.com/v3/repos/#list-repositories-for-the-authenticated-user
+
+13. Next, let's add a site header and center the content.
+    ![example site header and centered content](example-images/example-site-header-center-content.png)
+
+14. Let's display the currently logged in user in the site header(it will always be you, since we are authenticating via the token).
+
+![example sidebar closed](example-images/example-site-header-user.png)
+
+> API endpoint docs: https://developer.github.com/v3/users/#get-the-authenticated-user
