@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="widget">
+        <form>
+          <h1>Create a new repository</h1>
+
+          <div class="row pb-3">
+            <div class="col-4">
+              <label for="repoName">Repository Name</label>
+              <input type="text" class="form-control" id="repoName" />
+            </div>
+          </div>
+
+          <div class="row pb-3">
+            <div class="col-4">
+              <label for="description">Description (optional)</label>
+              <input type="text" class="form-control" id="description" />
+            </div>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="repoPrivacy"
+              id="public"
+              aria-describedby="public"
+              value="public"
+              checked
+            />
+            <label class="form-check-label" for="public"> Public </label
+            ><small id="public" class="form-text text-muted pb-2 mt-0 pt-0"
+              >Anyone can see this repository. You choose who can commit.</small
+            >
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="repoPrivacy"
+              id="private"
+              aria-describedby="private"
+              value="private"
+            />
+            <label class="form-check-label" for="private">
+              Private
+            </label>
+            <small id="private" class="form-text text-muted pb-2 mt-0 pt-0"
+              >You choose who can see and commit to this repository.</small
+            >
+          </div>
+
+          <div class="form-group form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="createReadme"
+              aria-describedby="readme"
+            />
+            <label class="form-check-label" for="createReadme"
+              >Initialize this repository with README</label
+            ><small id="readme" class="form-text text-muted"
+              >This will let you immediately clone the repository to your
+              computer.</small
+            >
+          </div>
+          <button type="reset" class="cancelBtn btn btn-secondary">
+            Cancel
+          </button>
+          <button type="submit" class="submitBtn btn btn-primary">
+            Create repository
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

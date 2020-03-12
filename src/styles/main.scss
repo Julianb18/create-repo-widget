@@ -1,0 +1,17 @@
+// This is where your styles can go, import any other scss or css files here or write your own style directly below
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+.widget {
+  margin: 0 auto;
+  max-width: 650px;
+  border: 1px solid rgb(165, 163, 163);
+}
+form {
+  padding: 20px;
+}
