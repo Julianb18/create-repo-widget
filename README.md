@@ -66,6 +66,8 @@ On submit, clear the form
 
 14. Let's display the currently logged in user in the site header(it will always be you, since we are authenticating via the token).
 
+15. Let's improve the appearance of the sidebar and make it slide in from the right.
+
 ![example sidebar closed](example-images/example-site-header-user.png)
 
 > API endpoint docs: https://developer.github.com/v3/users/#get-the-authenticated-user

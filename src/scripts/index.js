@@ -11,13 +11,18 @@ class NewRepo {
     this.formCreateRepo = document.querySelector(`.formCreateRepo`);
     this.formDeleteRepo = document.querySelector(`.formDeleteRepo`);
     this.repoUl = document.querySelector(`.repoList`);
+    this.userHeaderContainer = document.querySelector(`.userHeaderContainer`);
+    this.repo = document.querySelector(`.repo`);
+    this.back = document.querySelector(`.back`);
     this.attachEvent();
     this.userUrl = "https://api.github.com/user";
     this.url = "https://api.github.com/user/repos?sort=created&direction=desc";
     this.deleteUrlBase = "https://api.github.com/repos/Julianb18";
     this.getRepos();
-    // this.deleteRepo();
+    this.sideBarTransition();
     this.deleteRepoEvent();
+    this.getUserData();
+    this.sideBarExit();
   }
 
   attachEvent() {
@@ -131,7 +136,40 @@ class NewRepo {
        </li>`;
   }
   getUserData() {
-    fetch;
+    fetch(this.userUrl, {
+      method: "GET",
+      headers: {
+        Authorization: `token ${process.env.API_KEY}`
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+
+        this.userHeaderContainer.innerHTML = `<span>Signed in as ${data.login}</span>
+        <img src="${data.avatar_url}" alt="user profile picture" class="userImg"/>`;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  // loggedInUserTemp(data) {
+  //   return `<span>Signed in as ${data.login}</span>
+  //   <img src="${data.avatar_url}" alt="user profile picture" />`;
+  // }
+
+  sideBarTransition() {
+    this.repo.addEventListener("click", e => {
+      e.preventDefault();
+      document.querySelector(`.sidebar`).classList.add(`sidebar-active`);
+    });
+  }
+  sideBarExit() {
+    this.back.addEventListener("click", e => {
+      e.preventDefault();
+      document.querySelector(`.sidebar`).classList.remove(`sidebar-active`);
+    });
   }
 }
 
