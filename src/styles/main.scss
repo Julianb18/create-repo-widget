@@ -7,21 +7,20 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+  background-color: #262626 !important;
+  position: relative;
+}
+ul {
+  list-style-type: none;
 }
 .hero {
   height: 200px;
   width: 100%;
-  background-color: rgb(121, 170, 211);
+  background: linear-gradient(rgb(0, 77, 149), rgb(42, 152, 255));
   margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
 }
-.githubPng {
-  width: 50px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-}
-
 .headerPngContainer {
   display: flex;
   align-items: flex-end;
@@ -32,64 +31,96 @@ body {
   margin-right: 20px;
   margin-top: 20px;
 }
-
+.githubPng {
+  width: 50px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
 .userImg {
   width: 30px;
   border-radius: 5px;
 }
 
-.widget {
-  max-width: 650px;
-  height: 100%;
-  border: 1px solid rgb(165, 163, 163);
-  padding: 50px 20px 20px 20px;
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
 }
-.delete {
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  max-width: 650px;
-  border: 1px solid rgb(165, 163, 163);
+.input-spacing {
+  margin-top: 70px;
 }
-
-ul {
-  list-style-type: none;
+.form-check {
+  margin-top: 10px;
 }
-a.repo {
-  all: unset;
-  cursor: pointer;
-  text-decoration: none;
-  padding: 10px 15px;
-  position: absolute;
-  right: 250px;
-  top: 11px;
+.public-spacing {
+  margin-top: 40px;
 }
-a.repo:hover {
-  color: unset;
-  text-decoration: none;
+.form-group {
+  margin-top: 40px;
 }
-
-body {
-  position: relative;
-}
-.sidebar {
+.newRepoSidebar {
   height: 100vh;
   width: 500px;
-  border: 1px solid black;
   position: fixed;
   top: 0px;
   right: 0px;
-  background-color: rgb(255, 255, 255);
+  color: rgb(200, 200, 200);
+  background-color: #262626;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px;
   z-index: 100;
   opacity: 0;
-  transform: translateX(-500px);
+  transform: translateX(500px);
 }
-.sidebar-active {
+.newRepoSidebar-active {
   opacity: 1;
   transform: translateX(0);
 }
 
-a.back {
+.submitBtn {
+  all: unset;
+  color: rgb(200, 200, 200);
+  background: #262626;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px, inset 0px 0px 5px 0px rgb(46, 154, 255);
+}
+.submitBtn:hover {
+  color: rgb(46, 154, 255);
+  box-shadow: inset 0px 0px 5px 0px rgb(46, 154, 255);
+}
+
+.cancelBtn {
+  all: unset;
+  color: rgb(200, 200, 200);
+  background: #262626;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px, inset 0px 0px 5px 0px rgb(255, 46, 46);
+}
+.cancelBtn:hover {
+  color: rgb(255, 46, 46);
+  box-shadow: inset 0px 0px 5px 0px rgb(255, 46, 46);
+}
+
+.widget img {
+  width: 90px;
+  position: absolute;
+  bottom: 40px;
+  left: 200px;
+  opacity: 0.7;
+}
+
+.widget {
+  max-width: 650px;
+  height: 100%;
+  padding: 50px 20px 20px 20px;
+  position: relative;
+}
+
+a.backNewRepo {
   all: unset;
   text-decoration: none;
   cursor: pointer;
@@ -98,8 +129,137 @@ a.back {
   top: 10px;
   font-size: 1.8rem;
   color: rgb(163, 163, 163);
+  z-index: 100;
 }
-a.back:hover {
+a.backNewRepo:hover {
   color: unset;
   text-decoration: none;
+}
+.delete {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  padding: 50px 20px 20px 20px;
+  max-width: 650px;
+}
+
+.delRepoSidebar {
+  height: 100vh;
+  width: 500px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  color: rgb(200, 200, 200);
+  background-color: #262626;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateX(500px);
+}
+.delRepoSidebar-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.deleteBtn {
+  all: unset;
+  color: rgb(200, 200, 200);
+  background: #262626;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px, inset 0px 0px 5px 0px rgb(255, 46, 46);
+}
+.deleteBtn:hover {
+  color: rgb(255, 46, 46);
+  box-shadow: inset 0px 0px 5px 0px rgb(255, 46, 46);
+}
+
+.del-spacing {
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+a.backDelRepo {
+  all: unset;
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.8rem;
+  color: rgb(163, 163, 163);
+  z-index: 100;
+}
+a.backDelRepo:hover {
+  color: unset;
+  text-decoration: none;
+}
+
+.repoLinks {
+  display: block;
+  padding: 10px 15px;
+  color: rgb(200, 200, 200);
+  background: #262626;
+  border-radius: 10px;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px;
+}
+
+a.repoLinks:hover {
+  text-decoration: none;
+  background-color: #262626;
+  border-radius: 10px;
+  color: rgb(46, 154, 255);
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px, inset 0px -20px 0px -17px rgb(46, 154, 255);
+}
+
+.dropdown-repo {
+  position: absolute;
+  display: inline-block;
+  right: 280px;
+  margin-top: 21px;
+}
+
+a.repo {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(200, 200, 200);
+  background: #262626;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px;
+}
+a.repo:hover {
+  color: rgb(46, 154, 255);
+  text-decoration: none;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px, inset 0px -20px 0px -17px rgb(46, 154, 255);
+}
+.drop-content {
+  position: absolute;
+  min-width: 160px;
+}
+
+.drop-content a {
+  display: block;
+  color: rgb(200, 200, 200);
+  text-decoration: none;
+  padding: 5px 15px;
+  margin-top: 15px;
+  background: #262626;
+  border-radius: 10px;
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px;
+}
+
+.drop-content a:hover {
+  text-decoration: none;
+  color: rgb(46, 154, 255);
+  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+    #4d4d4d -4px -4px 8px, inset 0px -20px 0px -17px rgb(46, 154, 255);
 }

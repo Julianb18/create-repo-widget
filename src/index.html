@@ -8,27 +8,46 @@
   </head>
 
   <body>
-    <div class="sidebar">
-      <a href="#" class="back">X</a>
+    <header class="hero">
+      <div class="headerPngContainer">
+        <img src="./images/github.png" alt="" class="githubPng" />
+        <h1>Github Clone</h1>
+      </div>
+      <div class="dropdown-repo">
+        <a href="#" class="repo">Repository</a>
+        <div class="drop-content" style="display: none;">
+          <a href="#" class="new-repo">New Repository</a>
+          <a href="#" class="remove-repo">Delete Repository</a>
+        </div>
+      </div>
+      <div class="userHeaderContainer"></div>
+    </header>
+
+    <main class="container">
+      <ul class="row repoList"></ul>
+    </main>
+
+    <div class="newRepoSidebar">
+      <a href="#" class="backNewRepo">X</a>
       <section class="widget">
         <form class="formCreateRepo">
           <h1>Create a new repository</h1>
 
-          <div class="row pb-3">
-            <div class="col-4">
+          <div class="row pb-3 input-spacing">
+            <div class="col-8">
               <label for="repoName">Repository Name</label>
               <input type="text" class="form-control" id="repoName" />
             </div>
           </div>
 
           <div class="row pb-3">
-            <div class="col-4">
+            <div class="col-8">
               <label for="description">Description (optional)</label>
               <input type="text" class="form-control" id="description" />
             </div>
           </div>
 
-          <div class="form-check">
+          <div class="form-check public-spacing">
             <input
               class="form-check-input"
               type="radio"
@@ -75,47 +94,36 @@
               computer.</small
             >
           </div>
-          <button type="reset" class="cancelBtn btn btn-secondary">
-            Cancel
-          </button>
-          <button type="submit" class="submitBtn btn btn-primary">
-            Create repository
-          </button>
+          <div class="btn-container">
+            <button type="reset" class="cancelBtn">
+              Cancel
+            </button>
+            <button type="submit" class="submitBtn">
+              Create repository
+            </button>
+          </div>
         </form>
+        <img src="./images/github.png" alt="" />
       </section>
     </div>
 
-    <header class="hero">
-      <div class="headerPngContainer">
-        <img src="./images/github.png" alt="" class="githubPng" />
-        <h1>Github Clone</h1>
-      </div>
-
-      <a href="#" class="repo">Repository</a>
-
-      <div class="userHeaderContainer">
-        <!-- <span>Signed in as</span>
-        <img src="" alt="" /> -->
-      </div>
-    </header>
-    <main class="container">
-      <ul class="row repoList"></ul>
-
+    <div class="delRepoSidebar">
+      <a href="#" class="backDelRepo">X</a>
       <section class="delete">
         <form class="formDeleteRepo">
           <h1>Delete repository</h1>
 
-          <div class="row pb-3">
-            <div class="col-4">
+          <div class="row pb-3 del-spacing">
+            <div class="col-8">
               <label for="repoNameDel">Repository Name</label>
               <input type="text" class="form-control" id="repoNameDel" />
             </div>
           </div>
-          <button type="submit" class="deleteBtn btn btn-primary">
+          <button type="submit" class="deleteBtn">
             Delete repository
           </button>
         </form>
       </section>
-    </main>
+    </div>
   </body>
 </html>

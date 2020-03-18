@@ -13,16 +13,23 @@ class NewRepo {
     this.repoUl = document.querySelector(`.repoList`);
     this.userHeaderContainer = document.querySelector(`.userHeaderContainer`);
     this.repo = document.querySelector(`.repo`);
-    this.back = document.querySelector(`.back`);
-    this.attachEvent();
+    this.backNewRepo = document.querySelector(`.backNewRepo`);
+    this.backDelRepo = document.querySelector(`.backDelRepo`);
+    this.dropContent = document.querySelector(`.drop-content`);
+    this.newRepo = document.querySelector(`.new-repo`);
+    this.removeRepo = document.querySelector(`.remove-repo`);
     this.userUrl = "https://api.github.com/user";
     this.url = "https://api.github.com/user/repos?sort=created&direction=desc";
     this.deleteUrlBase = "https://api.github.com/repos/Julianb18";
+    this.attachEvent();
     this.getRepos();
-    this.sideBarTransition();
     this.deleteRepoEvent();
     this.getUserData();
-    this.sideBarExit();
+    this.newRepoSideBarTransition();
+    this.newRepoSideBarExit();
+    this.delRepoSideBarTransition();
+    this.delRepoSideBarExit();
+    this.dropDown();
   }
 
   attachEvent() {
@@ -123,9 +130,9 @@ class NewRepo {
 
        <li class="col-6 mb-4">
          <a
-           href=""
+           href="${element.html_url}"
            target="_blank"
-           class="list-group-item list-group-item-action bg-dark text-light"
+           class="repoLinks"
          >
            <div class="d-flex w-100 justify-content-between mb-3">
              <h5 class="mb-1 font-weight-bold">${element.name}</h5>
@@ -154,21 +161,47 @@ class NewRepo {
       });
   }
 
-  // loggedInUserTemp(data) {
-  //   return `<span>Signed in as ${data.login}</span>
-  //   <img src="${data.avatar_url}" alt="user profile picture" />`;
-  // }
-
-  sideBarTransition() {
-    this.repo.addEventListener("click", e => {
+  newRepoSideBarTransition() {
+    this.newRepo.addEventListener("click", e => {
       e.preventDefault();
-      document.querySelector(`.sidebar`).classList.add(`sidebar-active`);
+      document
+        .querySelector(`.newRepoSidebar`)
+        .classList.add(`newRepoSidebar-active`);
     });
   }
-  sideBarExit() {
-    this.back.addEventListener("click", e => {
+  newRepoSideBarExit() {
+    this.backNewRepo.addEventListener("click", e => {
       e.preventDefault();
-      document.querySelector(`.sidebar`).classList.remove(`sidebar-active`);
+      document
+        .querySelector(`.newRepoSidebar`)
+        .classList.remove(`newRepoSidebar-active`);
+    });
+  }
+  delRepoSideBarTransition() {
+    this.removeRepo.addEventListener("click", e => {
+      e.preventDefault();
+      document
+        .querySelector(`.delRepoSidebar`)
+        .classList.add(`delRepoSidebar-active`);
+    });
+  }
+  delRepoSideBarExit() {
+    this.backDelRepo.addEventListener("click", e => {
+      e.preventDefault();
+      document
+        .querySelector(`.delRepoSidebar`)
+        .classList.remove(`delRepoSidebar-active`);
+    });
+  }
+
+  dropDown() {
+    this.repo.addEventListener("click", e => {
+      e.preventDefault();
+      if (this.dropContent.style.display === "none") {
+        this.dropContent.style.display = "block";
+      } else {
+        this.dropContent.style.display = "none";
+      }
     });
   }
 }
