@@ -1,4 +1,3 @@
-// This is where your styles can go, import any other scss or css files here or write your own style directly below
 * {
   box-sizing: border-box;
 }
@@ -10,9 +9,13 @@ body {
   background-color: #262626 !important;
   position: relative;
 }
+
 ul {
   list-style-type: none;
 }
+
+/* header */
+
 .hero {
   height: 200px;
   width: 100%;
@@ -30,6 +33,7 @@ ul {
 .userHeaderContainer {
   margin-right: 20px;
   margin-top: 20px;
+  color: rgb(200, 200, 200);
 }
 .githubPng {
   width: 50px;
@@ -41,23 +45,66 @@ ul {
   border-radius: 5px;
 }
 
-.btn-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 100px;
+/* drop down repository menu */
+
+.dropdown-repo {
+  position: absolute;
+  display: inline-block;
+  right: 280px;
+  margin-top: 21px;
 }
-.input-spacing {
-  margin-top: 70px;
+
+a.repo {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(200, 200, 200);
+  background: #262626;
+  padding: 8px 15px;
+  border-radius: 10px;
+  box-shadow: rgb(0, 77, 149) 0px 0px 2px 2px, rgb(0, 54, 104) 4px 4px 8px,
+    #4d4d4d -4px -4px 8px, inset 0px 0px 5px 0px rgb(114, 111, 111);
 }
-.form-check {
-  margin-top: 10px;
+a.repo:hover {
+  color: rgb(46, 154, 255);
+  text-decoration: none;
+  box-shadow: inset 0px -20px 0px -17px rgb(46, 154, 255),
+    inset 0px 0px 5px 0px rgb(114, 111, 111);
 }
-.public-spacing {
-  margin-top: 40px;
+.drop-content {
+  position: absolute;
+  min-width: 160px;
 }
-.form-group {
-  margin-top: 40px;
+
+.drop-content a {
+  display: block;
+  color: rgb(200, 200, 200);
+  text-decoration: none;
+  padding: 5px 15px;
+  margin-top: 15px;
+  background: #262626;
+  border-radius: 10px;
+  box-shadow: rgb(0, 77, 149) 0px 0px 2px 2px, rgb(0, 54, 104) 4px 4px 8px,
+    #4d4d4d -4px -4px 8px, inset 0px 0px 5px 0px rgb(114, 111, 111);
 }
+
+.drop-content a:hover {
+  text-decoration: none;
+  color: rgb(46, 154, 255);
+  box-shadow: inset 0px -20px 0px -17px rgb(46, 154, 255),
+    inset 0px 0px 5px 0px rgb(114, 111, 111);
+}
+
+.drop-content a:last-child:hover {
+  color: rgb(255, 46, 46);
+  box-shadow: inset 0px -20px 0px -17px rgb(255, 46, 46),
+    inset 0px 0px 5px 0px rgb(114, 111, 111);
+}
+
+/* =============================================== */
+
+/* create new repo side bar styling */
+
 .newRepoSidebar {
   height: 100vh;
   width: 500px;
@@ -75,6 +122,12 @@ ul {
 .newRepoSidebar-active {
   opacity: 1;
   transform: translateX(0);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
 }
 
 .submitBtn {
@@ -103,6 +156,19 @@ ul {
 .cancelBtn:hover {
   color: rgb(255, 46, 46);
   box-shadow: inset 0px 0px 5px 0px rgb(255, 46, 46);
+}
+
+.input-spacing {
+  margin-top: 70px;
+}
+.form-check {
+  margin-top: 10px;
+}
+.public-spacing {
+  margin-top: 40px;
+}
+.form-group {
+  margin-top: 40px;
 }
 
 .widget img {
@@ -135,13 +201,10 @@ a.backNewRepo:hover {
   color: unset;
   text-decoration: none;
 }
-.delete {
-  margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 20px;
-  padding: 50px 20px 20px 20px;
-  max-width: 650px;
-}
+
+/* =============================================== */
+
+/* delete repo side bar styling */
 
 .delRepoSidebar {
   height: 100vh;
@@ -160,6 +223,21 @@ a.backNewRepo:hover {
 .delRepoSidebar-active {
   opacity: 1;
   transform: translateX(0);
+}
+
+.delete {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  padding: 50px 20px 20px 20px;
+  max-width: 650px;
+}
+.delete img {
+  width: 90px;
+  position: absolute;
+  bottom: 40px;
+  left: 200px;
+  opacity: 0.7;
 }
 
 .deleteBtn {
@@ -197,6 +275,10 @@ a.backDelRepo:hover {
   text-decoration: none;
 }
 
+/* =============================================== */
+
+/* list of repos styles */
+
 .repoLinks {
   display: block;
   padding: 10px 15px;
@@ -204,7 +286,7 @@ a.backDelRepo:hover {
   background: #262626;
   border-radius: 10px;
   box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
-    #4d4d4d -4px -4px 8px;
+    #4d4d4d -4px -4px 8px, inset 0px 0px 5px 0px rgb(114, 111, 111);
 }
 
 a.repoLinks:hover {
@@ -212,54 +294,7 @@ a.repoLinks:hover {
   background-color: #262626;
   border-radius: 10px;
   color: rgb(46, 154, 255);
-  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
-    #4d4d4d -4px -4px 8px, inset 0px -20px 0px -17px rgb(46, 154, 255);
+  box-shadow: inset 0px -20px 0px -17px rgb(46, 154, 255),
+    inset 0px 0px 5px 0px rgb(114, 111, 111);
 }
-
-.dropdown-repo {
-  position: absolute;
-  display: inline-block;
-  right: 280px;
-  margin-top: 21px;
-}
-
-a.repo {
-  all: unset;
-  cursor: pointer;
-  text-decoration: none;
-  color: rgb(200, 200, 200);
-  background: #262626;
-  padding: 5px 15px;
-  border-radius: 10px;
-  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
-    #4d4d4d -4px -4px 8px;
-}
-a.repo:hover {
-  color: rgb(46, 154, 255);
-  text-decoration: none;
-  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
-    #4d4d4d -4px -4px 8px, inset 0px -20px 0px -17px rgb(46, 154, 255);
-}
-.drop-content {
-  position: absolute;
-  min-width: 160px;
-}
-
-.drop-content a {
-  display: block;
-  color: rgb(200, 200, 200);
-  text-decoration: none;
-  padding: 5px 15px;
-  margin-top: 15px;
-  background: #262626;
-  border-radius: 10px;
-  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
-    #4d4d4d -4px -4px 8px;
-}
-
-.drop-content a:hover {
-  text-decoration: none;
-  color: rgb(46, 154, 255);
-  box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
-    #4d4d4d -4px -4px 8px, inset 0px -20px 0px -17px rgb(46, 154, 255);
-}
+/* =============================================== */
